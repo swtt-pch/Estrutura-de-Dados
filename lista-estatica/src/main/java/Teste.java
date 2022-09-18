@@ -5,11 +5,12 @@ public class Teste {
 
     // Testar Classe ListaEstatica
     public static void main(String[] args) {
-        ListaEstatica listaEstatica = new ListaEstatica(3);
-        listaEstatica.adiciona(10);
-        listaEstatica.adiciona(20);
-        listaEstatica.adiciona(30);
-        assertFalse(listaEstatica.removePeloIndice(3));
-        assertFalse(listaEstatica.removePeloIndice(-3));
+        ListaEstaticaOrdenada lista = new ListaEstaticaOrdenada(5);
+        lista.adiciona(50);
+        lista.adiciona(60);
+        lista.adiciona(30);
+        lista.adiciona(70);
+        lista.adiciona(10);
+        lista.exibe();
     }
 }

@@ -59,7 +59,7 @@ public class ListaEstatica {
         for (int i = indice; i< nroElem-1; i++){
             vetor[i] = vetor[i+1];
         }
-        nroElem = nroElem-1;
+        nroElem--;
         vetor[nroElem] = 0;
         return true;
     }
@@ -85,7 +85,7 @@ public class ListaEstatica {
         String str = "[";
         for (int i = 0; i < nroElem; i++) {
             if (i == nroElem-1){
-                str += String.format("%d", vetor[i]);
+                str += String.format("%d]", vetor[i]);
             } else{
                 str += String.format("%d,", vetor[i]);
             }
@@ -101,5 +101,37 @@ public class ListaEstatica {
 
     public int[] getVetor() {
         return vetor;
+    }
+
+    public boolean substitui(int antigo, int novo){
+        for (int i = 0; i < nroElem; i++) {
+            if (vetor[i] == antigo) {
+                vetor[i] = novo;
+                return true;
+            }
+        }
+        System.out.println("valor não encontrado");
+        return false;
+    }
+
+    public int contarOcorrencias(int elemento){
+        int count = 0;
+        for (int i = 0; i < nroElem; i++) {
+            if (vetor[i] == elemento) count++;
+        }
+        return count;
+    }
+
+    public boolean adicionarNoInicio(int elemento){
+        if (nroElem == vetor.length) {
+            System.out.println("Lista cheia");
+            return false;
+        }
+        for (int i = nroElem; i > 0; i--){
+            vetor[i] = vetor[i-1];
+        }
+        vetor[0] = elemento;
+        nroElem++;
+        return true;
     }
 }
