@@ -42,7 +42,13 @@ public class Pilha {
 
     // 08) Método exibe
     public void exibe() {
-
+        if (isEmpty()) {
+            System.out.println("Lista vazia.");
+            return;
+        }
+        for (int i = topo; i > 0; i--) {
+            System.out.println("["+ i + "] = " + pilha[topo]);
+        }
     }
 
 
